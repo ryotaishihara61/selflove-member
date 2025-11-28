@@ -92,9 +92,6 @@
           <div class="footer-link">
             <a href="https://selflove.or.jp/" target="_blank" rel="noreferrer">
               一般社団法人セルフラブ協会 公式サイト
-            </a><br/>
-            <a href="./notices.html?token=${encodeURIComponent(token)}" style="display:inline-block;margin-top:4px;">
-              お知らせ一覧を見る
             </a>
           </div>
         `;
