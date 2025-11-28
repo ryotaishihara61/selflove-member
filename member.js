@@ -77,6 +77,9 @@
         console.log("final photoUrl used:", photoUrl || "(none)");
   
         card.innerHTML = `
+          <div class="card-logo">
+            <img src="./logo.png" alt="セルフラブ協会ロゴ" />
+          </div>
           <div class="card-header">
             <div class="label">一般社団法人</div>
             <div class="title">セルフラブ協会</div>
