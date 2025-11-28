@@ -148,11 +148,12 @@ body {
 .footer-link {
   padding: 0 24px 28px;
   background: #ffffff;
+  text-align: center;
 }
 
 .footer-link a {
-  display: block;
-  padding: 16px 24px;
+  display: inline-block;
+  padding: 16px 48px;
   background: #E8C2D8;
   color: #ffffff;
   text-decoration: none;
