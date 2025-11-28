@@ -6,7 +6,7 @@
       card.innerHTML = `<div class="message">${html}</div>
         <div class="footer-link">
           <a href="https://selflove.or.jp/" target="_blank" rel="noreferrer">
-            一般社団法人 Self Love Lab 公式サイトへ
+            一般社団法人セルフラブ協会 公式サイトへ
           </a>
         </div>`;
     }
@@ -37,7 +37,7 @@
   
     if (!token) {
       renderMessage(
-        "このページは Self Love Lab の会員証表示用ページです。<br>事務局から共有された会員証URLでアクセスしてください。"
+        "このページはセルフラブ協会の会員証表示用ページです。<br>事務局から共有された会員証URLでアクセスしてください。"
       );
       return;
     }
@@ -79,7 +79,7 @@
         card.innerHTML = `
           <div class="card-header">
             <div class="label">一般社団法人</div>
-            <div class="title">Self Love Lab</div>
+            <div class="title">セルフラブ協会</div>
           </div>
           <div class="photo-wrap">
             ${photo}
@@ -91,7 +91,7 @@
           </div>
           <div class="footer-link">
             <a href="https://selflove.or.jp/" target="_blank" rel="noreferrer">
-              一般社団法人 Self Love Lab 公式サイト
+              一般社団法人セルフラブ協会 公式サイト
             </a><br/>
             <a href="./notices.html?token=${encodeURIComponent(token)}" style="display:inline-block;margin-top:4px;">
               お知らせ一覧を見る
