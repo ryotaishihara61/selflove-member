@@ -1,0 +1,23 @@
+name: Deploy selflove-member to Lolipop
+
+on:
+  push:
+    branches:
+      - main   # デフォルトブランチが master なら master に変えてOK
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via WebDAV
+        uses: bokuweb/webdav-sync@v1
+        with:
+          server-url: ${{ secrets.LOLIPOP_WEBDAV_URL }}
+          username: ${{ secrets.LOLIPOP_WEBDAV_USER }}
+          password: ${{ secrets.LOLIPOP_WEBDAV_PASS }}
+          local-path: .
+          remote-path: /member
