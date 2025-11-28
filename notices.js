@@ -1,3 +1,11 @@
+// URLパラメータからtokenを取得して戻るリンクに追加
+const params = new URLSearchParams(window.location.search);
+const token = params.get("token");
+if (token) {
+  const backLink = document.getElementById("backLink");
+  backLink.href = `./index.html?token=${encodeURIComponent(token)}`;
+}
+
 fetch(`${API_BASE}?type=notices`)
   .then(res => res.json())
   .then(data => {
