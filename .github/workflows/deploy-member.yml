@@ -21,4 +21,4 @@ jobs:
           username: ${{ secrets.LOLIPOP_WEBDAV_USER }}
           password: ${{ secrets.LOLIPOP_WEBDAV_PASS }}
           local: "./"
-          remote: "/member"
+          remote: "/selflove/member"
