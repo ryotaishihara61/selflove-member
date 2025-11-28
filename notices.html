@@ -21,6 +21,19 @@
 
   <script>
     const API_BASE = "https://script.google.com/macros/s/AKfycbzHVu_05C_eCFH8ESeBspyfg8HRNs1jfifK1iSbRoOwPBbgDRA-QTeEI23yrzHYbRJE/exec";
+
+    // ページ読み込み時に即座にtokenを取得してリンクを更新
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get("token");
+      if (token) {
+        const backLink = document.getElementById("backLink");
+        if (backLink) {
+          const baseUrl = window.location.origin + window.location.pathname.replace('notices.html', '');
+          backLink.href = baseUrl + 'index.html?token=' + encodeURIComponent(token);
+        }
+      }
+    })();
   </script>
   <script src="./notices.js"></script>
 </body>
