@@ -3,7 +3,7 @@ name: Deploy selflove-member to Lolipop
 on:
   push:
     branches:
-      - main   # デフォルトブランチが master なら master に変えてOK
+      - main   # デフォルトブランチが master なら master に変更
 
 jobs:
   deploy:
@@ -11,13 +11,14 @@ jobs:
 
     steps:
       - name: Checkout
+      # リポジトリの中身を取ってくる
         uses: actions/checkout@v4
 
       - name: Deploy via WebDAV
-        uses: bokuweb/webdav-sync@v1
+        uses: XPH0816/webdav-deploy-action@v0.3
         with:
-          server-url: ${{ secrets.LOLIPOP_WEBDAV_URL }}
+          url: ${{ secrets.LOLIPOP_WEBDAV_URL }}
           username: ${{ secrets.LOLIPOP_WEBDAV_USER }}
           password: ${{ secrets.LOLIPOP_WEBDAV_PASS }}
-          local-path: .
-          remote-path: /member
+          local: "./"
+          remote: "/member"
