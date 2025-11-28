@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ryotaishihara61.github.io/selflove-member/sitemap.xml
