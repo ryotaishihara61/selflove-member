@@ -1,134 +1,209 @@
-body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%);
-  }
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Helvetica Neue", sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 50%, #fef3f6 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ヘッダー背景エリア（ブランドカラー） */
+.card-header {
+  background: linear-gradient(135deg, #E8C2D8 0%, #D4A5C0 100%);
+  padding: 32px 24px 80px;
+  text-align: center;
+  position: relative;
+}
+
+.card-logo {
+  margin-bottom: 16px;
+}
+
+.card-logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.card-header .label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.card-header .title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* 顔写真（オーバーラップ配置） */
+.photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 16px;
+}
+
+.photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #9ca3af;
+  border: 6px solid #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 情報エリア */
+.info {
+  text-align: center;
+  padding: 0 32px 32px;
+  background: #ffffff;
+}
+
+.info .name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+/* 会員情報（横並び） */
+.info-grid {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.info-item {
+  flex: 1;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 16px 12px;
+  border: 1px solid #f3f4f6;
+}
+
+.info-item-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.info-item-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.01em;
+}
+
+/* ボタン */
+.footer-link {
+  padding: 0 24px 28px;
+  background: #ffffff;
+}
+
+.footer-link a {
+  display: block;
+  padding: 16px 24px;
+  background: #E8C2D8;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(232, 194, 216, 0.3);
+}
+
+.footer-link a:hover {
+  background: #D4A5C0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 194, 216, 0.4);
+}
+
+.footer-link a:active {
+  transform: translateY(0);
+}
+
+/* メッセージ */
+.message {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.8;
+  padding: 32px 24px;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 480px) {
   .app {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 16px;
   }
 
   .card {
-    width: 100%;
-    max-width: 420px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(219, 39, 119, 0.15);
-    overflow: hidden;
+    max-width: 100%;
   }
 
-  .card-logo {
-    text-align: center;
-    padding: 24px 16px 16px;
-    background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
-  }
-
-  .card-logo img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-  }
-
-  .card-header {
-    text-align: center;
-    padding: 16px;
-    background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
-    color: #fff;
-  }
-
-  .card-header .label {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.9);
-    letter-spacing: 0.05em;
-  }
-
-  .card-header .title {
+  .info .name {
     font-size: 22px;
-    font-weight: 700;
-    color: #fff;
-    margin-top: 4px;
-  }
-  
-  .photo-wrap {
-    display: flex;
-    justify-content: center;
-    padding: 24px 0;
-    background: #fff;
   }
 
   .photo {
     width: 120px;
     height: 120px;
-    border-radius: 9999px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #9ca3af;
-    border: 4px solid #fff;
-    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.2);
   }
 
-  .photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .card-header {
+    padding: 28px 20px 70px;
   }
 
-  .info {
-    text-align: center;
-    font-size: 14px;
-    color: #4b5563;
-    padding: 0 24px 24px;
-    background: #fff;
+  .photo-wrap {
+    margin-top: -55px;
   }
-
-  .info .name {
-    font-size: 20px;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 16px;
-  }
-
-  .info div {
-    margin-top: 8px;
-    padding: 8px 12px;
-    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%);
-    border-radius: 8px;
-    font-weight: 500;
-  }
-
-  .footer-link {
-    border-top: 2px solid #fce7f3;
-    padding: 16px 24px;
-    text-align: center;
-    font-size: 12px;
-    background: #fff;
-  }
-
-  .footer-link a {
-    color: #ec4899;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
-  }
-
-  .footer-link a:hover {
-    color: #a855f7;
-  }
-
-  .message {
-    font-size: 14px;
-    color: #4b5563;
-    text-align: center;
-    line-height: 1.8;
-    padding: 24px;
-  }
+}
   

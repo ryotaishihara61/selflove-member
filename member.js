@@ -6,7 +6,7 @@
       card.innerHTML = `<div class="message">${html}</div>
         <div class="footer-link">
           <a href="https://selflove.or.jp/" target="_blank" rel="noreferrer">
-            一般社団法人セルフラブ協会 公式サイトへ
+            公式サイトへ
           </a>
         </div>`;
     }
@@ -77,10 +77,10 @@
         console.log("final photoUrl used:", photoUrl || "(none)");
   
         card.innerHTML = `
-          <div class="card-logo">
-            <img src="./logo.png" alt="セルフラブ協会ロゴ" />
-          </div>
           <div class="card-header">
+            <div class="card-logo">
+              <img src="./logo.png" alt="セルフラブ協会ロゴ" />
+            </div>
             <div class="label">一般社団法人</div>
             <div class="title">セルフラブ協会</div>
           </div>
@@ -89,12 +89,20 @@
           </div>
           <div class="info">
             <div class="name">${displayName}</div>
-            <div>会員番号：${memberId}</div>
-            <div>入会日：${joined}</div>
+            <div class="info-grid">
+              <div class="info-item">
+                <div class="info-item-label">会員番号</div>
+                <div class="info-item-value">${memberId}</div>
+              </div>
+              <div class="info-item">
+                <div class="info-item-label">入会日</div>
+                <div class="info-item-value">${joined}</div>
+              </div>
+            </div>
           </div>
           <div class="footer-link">
             <a href="https://selflove.or.jp/" target="_blank" rel="noreferrer">
-              一般社団法人セルフラブ協会 公式サイト
+              公式サイトへ
             </a>
           </div>
         `;
