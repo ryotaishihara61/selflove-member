@@ -22,10 +22,52 @@ body {
   width: 100%;
   max-width: 380px;
   background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  /* 多層の影で立体感を演出 */
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 12px 24px rgba(0, 0, 0, 0.12),
+    0 24px 48px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   position: relative;
+  /* プラスチックカードの厚みを表現 */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  /* 微妙な3D効果 */
+  transform: perspective(1000px) rotateX(2deg);
+  transform-style: preserve-3d;
+}
+
+/* カード上部に光沢感を追加 */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 100;
+  border-radius: 20px 20px 0 0;
+}
+
+/* カードの厚みを表現する縁 */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  pointer-events: none;
 }
 
 /* ヘッダー背景エリア（ブランドカラー） */
@@ -49,7 +91,11 @@ body {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 50%;
   padding: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* より強い立体感 */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .card-header .label {
@@ -89,7 +135,11 @@ body {
   font-size: 12px;
   color: #9ca3af;
   border: 6px solid #ffffff;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  /* より立体的な影 */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 12px 24px rgba(0, 0, 0, 0.12),
+    0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .photo img {
@@ -126,6 +176,10 @@ body {
   border-radius: 12px;
   padding: 16px 12px;
   border: 1px solid #f3f4f6;
+  /* 微妙な立体感 */
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .info-item-label {
@@ -162,13 +216,21 @@ body {
   font-size: 14px;
   letter-spacing: 0.02em;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(232, 194, 216, 0.3);
+  /* より立体的なボタン */
+  box-shadow:
+    0 2px 4px rgba(232, 194, 216, 0.2),
+    0 4px 12px rgba(232, 194, 216, 0.3),
+    0 8px 24px rgba(232, 194, 216, 0.2);
 }
 
 .footer-link a:hover {
   background: #D4A5C0;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(232, 194, 216, 0.4);
+  /* ホバー時により強い立体感 */
+  box-shadow:
+    0 4px 8px rgba(232, 194, 216, 0.25),
+    0 8px 20px rgba(232, 194, 216, 0.35),
+    0 16px 32px rgba(232, 194, 216, 0.25);
 }
 
 .footer-link a:active {
