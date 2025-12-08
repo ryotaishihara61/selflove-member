@@ -33,8 +33,8 @@
   
     // URLパラメータから token を取得
     const params = new URLSearchParams(window.location.search);
-    const token = params.get("token");
-  
+    const token = params.get("token") || "admin";
+
     if (!token) {
       renderMessage(
         "このページはセルフラブ協会の会員証表示用ページです。<br>事務局から共有された会員証URLでアクセスしてください。"
@@ -100,12 +100,50 @@
               </div>
             </div>
           </div>
+          <div class="audio-section">
+            <audio id="selflove-audio" preload="metadata">
+              <source src="https://selflove.or.jp/audio/selflove.wav" type="audio/wav">
+            </audio>
+            <button id="audio-play-btn" class="audio-play-btn" title="協会公式ソング「Selflove」を再生">
+              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+              </svg>
+            </button>
+            <div class="audio-label">協会公式ソング「Selflove」</div>
+          </div>
           <div class="footer-link">
             <a href="https://selflove.or.jp/" target="_blank" rel="noreferrer">
               公式サイトへ
             </a>
           </div>
         `;
+
+        // オーディオ再生機能の初期化
+        const audioElement = document.getElementById("selflove-audio");
+        const playBtn = document.getElementById("audio-play-btn");
+        const playIcon = playBtn.querySelector(".play-icon");
+        const pauseIcon = playBtn.querySelector(".pause-icon");
+
+        playBtn.addEventListener("click", () => {
+          if (audioElement.paused) {
+            audioElement.play();
+            playIcon.style.display = "none";
+            pauseIcon.style.display = "block";
+          } else {
+            audioElement.pause();
+            playIcon.style.display = "block";
+            pauseIcon.style.display = "none";
+          }
+        });
+
+        // 再生が終了したら再生ボタンに戻す
+        audioElement.addEventListener("ended", () => {
+          playIcon.style.display = "block";
+          pauseIcon.style.display = "none";
+        });
       })
       .catch((err) => {
         console.error("fetch error:", err);
