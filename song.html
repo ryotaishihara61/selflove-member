@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Selflove - 協会公式ソング｜一般社団法人セルフラブ協会</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="./logo.png" />
+  <link rel="apple-touch-icon" href="./logo.png" />
+  <link rel="stylesheet" href="./song.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="song-container">
+      <!-- ヘッダー -->
+      <div class="song-header">
+        <div class="header-logo">
+          <img src="./logo.png" alt="セルフラブ協会ロゴ" />
+        </div>
+        <div class="header-text">
+          <div class="header-label">一般社団法人セルフラブ協会</div>
+          <div class="header-title">協会公式ソング</div>
+        </div>
+      </div>
+
+      <!-- 曲タイトル -->
+      <div class="song-title-section">
+        <h1 class="song-title">Selflove</h1>
+      </div>
+
+      <!-- オーディオプレイヤー -->
+      <div class="player-section">
+        <audio id="audio" preload="metadata">
+          <source src="https://selflove.or.jp/audio/selflove.wav" type="audio/wav">
+        </audio>
+
+        <button id="play-btn" class="play-button" title="再生">
+          <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+          </svg>
+        </button>
+
+        <div class="progress-container">
+          <div class="time-display">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progress" class="progress-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 歌詞カード -->
+      <div class="lyrics-card">
+        <h2 class="lyrics-title">歌詞</h2>
+        <div class="lyrics-content">
+          <p class="lyrics-verse">
+            静かな夜に響く心の声<br>
+            鏡に映る君が君を愛してる<br>
+            揺れてる瞳に問いかける瞬間<br>
+            自分を受け入れるその強さを
+          </p>
+
+          <p class="lyrics-verse">
+            明日の風がどこへ吹いても<br>
+            自分のペースで一歩ずつ進む<br>
+            弱さも愛するその勇気こそ<br>
+            新しい光が心に宿る
+          </p>
+
+          <p class="lyrics-chorus">
+            君はそのままで素晴らしい<br>
+            誰よりも大切な存在<br>
+            自分を信じて歩いて行こう<br>
+            この世界の真ん中で輝く
+          </p>
+
+          <p class="lyrics-verse">
+            少しずつ変わる青い空模様<br>
+            涙の跡も未来へ架かる虹<br>
+            傷ついた過去が君を作る<br>
+            だから今ここにいられるんだ
+          </p>
+
+          <p class="lyrics-verse">
+            笑顔の裏に隠した悲しみ<br>
+            そのすべてが君の強さへと<br>
+            愛することも忘れずにいこう<br>
+            心に寄り添う優しいメロディー
+          </p>
+
+          <p class="lyrics-chorus">
+            君はそのままで素晴らしい<br>
+            誰よりも大切な存在<br>
+            自分を信じて歩いて行こう<br>
+            この世界の真ん中で輝く
+          </p>
+        </div>
+      </div>
+
+      <!-- 戻るボタン -->
+      <div class="back-section">
+        <a href="javascript:history.back()" class="back-button">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+          </svg>
+          会員証に戻る
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./song.js"></script>
+</body>
+</html>

@@ -101,18 +101,18 @@
             </div>
           </div>
           <div class="audio-section">
-            <audio id="selflove-audio" preload="metadata">
-              <source src="https://selflove.or.jp/audio/selflove.wav" type="audio/wav">
-            </audio>
-            <button id="audio-play-btn" class="audio-play-btn" title="協会公式ソング「Selflove」を再生">
-              <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
+            <a href="./song.html" class="audio-link">
+              <svg class="music-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
               </svg>
-              <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
-                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+              <div class="audio-text">
+                <div class="audio-label">協会公式ソング</div>
+                <div class="audio-title">「Selflove」</div>
+              </div>
+              <svg class="arrow-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
               </svg>
-            </button>
-            <div class="audio-label">協会公式ソング「Selflove」</div>
+            </a>
           </div>
           <div class="footer-link">
             <a href="https://selflove.or.jp/" target="_blank" rel="noreferrer">
@@ -120,30 +120,6 @@
             </a>
           </div>
         `;
-
-        // オーディオ再生機能の初期化
-        const audioElement = document.getElementById("selflove-audio");
-        const playBtn = document.getElementById("audio-play-btn");
-        const playIcon = playBtn.querySelector(".play-icon");
-        const pauseIcon = playBtn.querySelector(".pause-icon");
-
-        playBtn.addEventListener("click", () => {
-          if (audioElement.paused) {
-            audioElement.play();
-            playIcon.style.display = "none";
-            pauseIcon.style.display = "block";
-          } else {
-            audioElement.pause();
-            playIcon.style.display = "block";
-            pauseIcon.style.display = "none";
-          }
-        });
-
-        // 再生が終了したら再生ボタンに戻す
-        audioElement.addEventListener("ended", () => {
-          playIcon.style.display = "block";
-          pauseIcon.style.display = "none";
-        });
       })
       .catch((err) => {
         console.error("fetch error:", err);

@@ -188,49 +188,63 @@ body {
 
 /* オーディオセクション */
 .audio-section {
-  padding: 20px 32px;
+  padding: 12px 24px;
   background: #ffffff;
+}
+
+.audio-link {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
-}
-
-.audio-play-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #E8C2D8 0%, #D4A5C0 100%);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #f9f5f8 0%, #fef8fb 100%);
+  border-radius: 12px;
+  text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(232, 194, 216, 0.3);
-  color: #ffffff;
-  padding: 0;
+  border: 1px solid rgba(232, 194, 216, 0.2);
 }
 
-.audio-play-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(232, 194, 216, 0.4);
+.audio-link:hover {
+  background: linear-gradient(135deg, #f5eff4 0%, #fdf3f8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 194, 216, 0.2);
 }
 
-.audio-play-btn:active {
-  transform: scale(0.95);
+.audio-link:active {
+  transform: translateY(0);
 }
 
-.audio-play-btn svg {
-  width: 24px;
-  height: 24px;
+.music-icon {
+  width: 32px;
+  height: 32px;
+  color: #D4A5C0;
+  flex-shrink: 0;
+}
+
+.audio-text {
+  flex: 1;
+  text-align: left;
 }
 
 .audio-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #6b7280;
-  letter-spacing: 0.01em;
+  font-size: 11px;
+  font-weight: 500;
+  color: #9ca3af;
+  letter-spacing: 0.02em;
+}
+
+.audio-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 2px;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  color: #9ca3af;
+  flex-shrink: 0;
 }
 
 /* ボタン */
@@ -301,13 +315,20 @@ body {
   }
 
   .audio-section {
-    padding: 16px 24px;
-    flex-direction: column;
-    gap: 8px;
+    padding: 12px 20px;
   }
 
-  .audio-label {
-    font-size: 12px;
+  .audio-link {
+    padding: 14px 16px;
+  }
+
+  .music-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .audio-title {
+    font-size: 14px;
   }
 }
   
