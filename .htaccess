@@ -1,0 +1,28 @@
+# PWA対応：manifest.json、service-worker.js、pwa-register.jsなどの静的ファイルを素通りさせる
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 実在するファイルまたはディレクトリの場合は、リライトをスキップ
+  # これにより、.json, .js, .png などの静的ファイルがそのまま返される
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # その他のリライトルールがある場合はここに追加
+  # 例：404ページへのリダイレクトなど
+</IfModule>
+
+# JSONファイルのMIMEタイプを明示的に設定
+<IfModule mod_mime.c>
+  AddType application/json .json
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# セキュリティヘッダー（オプション）
+<IfModule mod_headers.c>
+  # manifest.jsonにCORSヘッダーを設定（必要に応じて）
+  <FilesMatch "\.(json|webmanifest)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
