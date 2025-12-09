@@ -4,21 +4,8 @@
   <meta charset="UTF-8" />
   <title>お知らせ｜一般社団法人セルフラブ協会</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.webmanifest" />
-  <meta name="theme-color" content="#E8C2D8" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="./logo.png" />
-
-  <!-- iOS PWA Support -->
   <link rel="apple-touch-icon" href="./logo.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="セルフラブ協会" />
-
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -51,21 +38,5 @@
     })();
   </script>
   <script src="./notices.js"></script>
-
-  <!-- PWA Service Worker Registration -->
-  <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('/service-worker.js')
-        .then((registration) => {
-          console.log('Service Worker registered successfully:', registration.scope);
-        })
-        .catch((err) => {
-          console.error('Service Worker registration failed:', err);
-        });
-    });
-  }
-  </script>
 </body>
 </html>
