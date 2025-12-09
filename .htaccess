@@ -13,10 +13,11 @@
   # 例：404ページへのリダイレクトなど
 </IfModule>
 
-# JSONファイルのMIMEタイプを明示的に設定
+# JSONファイルとWebManifestのMIMEタイプを明示的に設定
 <IfModule mod_mime.c>
   AddType application/json .json
   AddType application/manifest+json .webmanifest
+  AddType application/javascript .js
 </IfModule>
 
 # セキュリティヘッダー（オプション）

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.json" />
+  <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="theme-color" content="#E8C2D8" />
 
   <!-- Favicon -->
@@ -53,6 +53,19 @@
   <script src="./notices.js"></script>
 
   <!-- PWA Service Worker Registration -->
-  <script src="/pwa-register.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker registered successfully:', registration.scope);
+        })
+        .catch((err) => {
+          console.error('Service Worker registration failed:', err);
+        });
+    });
+  }
+  </script>
 </body>
 </html>
